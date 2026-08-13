@@ -1,0 +1,27 @@
+[package]
+name = "drymark-core"
+description = "Deterministic, local-first Unicode text sanitation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[build-dependencies]
+sha2 = "0.10"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+unicode-normalization = "0.1"
+unicode-script = "0.5.8"
+zeroize = "1.8"
+
+[dev-dependencies]
+emojis = "0.9"
+proptest = "1.7"
+serde_json = "1.0"
+unicode-properties = { version = "0.1", features = ["emoji"] }
+
+[lints]
+workspace = true

@@ -1,0 +1,27 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/drymark-core",
+  "crates/drymark-cli",
+  "crates/drymark-transaction",
+  "apps/desktop/src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "MIT"
+authors = ["Soroush Yousefpour"]
+repository = "https://github.com/gabrimatic/drymark"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"

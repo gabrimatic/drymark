@@ -1,0 +1,16 @@
+{
+  "name": "drymark-workspace",
+  "private": true,
+  "workspaces": [
+    "apps/desktop"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @drymark/desktop",
+    "test:ui": "npm run test --workspace @drymark/desktop",
+    "lint:ui": "npm run lint --workspace @drymark/desktop",
+    "tauri": "npm run tauri --workspace @drymark/desktop --"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

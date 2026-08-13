@@ -1,0 +1,73 @@
+name: Bug report
+description: Report a reproducible DryMark problem using synthetic text.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include private clipboard text, credentials, or proprietary documents.
+        Security issues belong in private vulnerability reporting.
+  - type: input
+    id: version
+    attributes:
+      label: DryMark version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system
+      placeholder: macOS 26.0, Windows 11, Ubuntu 26.04 with Wayland
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - Global shortcut
+        - Tray
+        - Settings
+        - CLI
+    validations:
+      required: true
+  - type: dropdown
+    id: policy
+    attributes:
+      label: Policy
+      options:
+        - Preserve
+        - Thorough
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Synthetic reproduction
+      description: Write hidden values as U+XXXX and include exact steps.
+      placeholder: "Copy A U+200B B, press Alt+Shift+V, then paste into a plain-text editor."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I replaced all private content with a synthetic reproduction.
+          required: true
+        - label: This report does not describe a security vulnerability.
+          required: true

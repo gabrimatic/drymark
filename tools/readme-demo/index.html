@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A synthetic local fixture for generic Unicode-property inspection."
+    />
+    <title>DryMark · Synthetic fixture</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="demo.js" defer></script>
+  </head>
+  <body>
+    <main class="stage">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="hero-copy">
+          <p class="overline">DryMark · local clipboard proof</p>
+          <h1>Local cleanup,<br />independently checked.</h1>
+          <p class="hero-description">
+            A synthetic source and an independent Unicode-property inspector
+            verify the local cleanup.
+          </p>
+        </div>
+        <div class="local-badge">
+          <span aria-hidden="true"></span>
+          Offline fixture
+        </div>
+      </header>
+
+      <div class="workflow" aria-label="Clipboard cleanup fixture">
+        <section class="proof-card source-card" aria-labelledby="source-title">
+          <div class="card-heading">
+            <div>
+              <p class="overline">Synthetic fixture</p>
+              <h2 id="source-title">Marked source</h2>
+            </div>
+            <span class="step-number" aria-hidden="true">01</span>
+          </div>
+
+          <p class="fixture-text" data-source-text>
+            This synthetic paragraph stays visibly unchanged while DryMark
+            removes supported hidden clipboard channels.
+          </p>
+
+          <div class="inspection-result marked" data-source-count>
+            7 supported hidden channels detected
+          </div>
+
+          <div class="card-action">
+            <button class="primary-button" type="button" data-copy-button>
+              <span class="button-icon" aria-hidden="true">⌘</span>
+              Copy marked text
+            </button>
+            <p class="action-status" aria-live="polite" data-copy-status>
+              Ready to copy synthetic text
+            </p>
+          </div>
+        </section>
+
+        <div class="flow-arrow" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 24 24" role="presentation">
+            <path d="M5 12h13m-5-5 5 5-5 5" />
+          </svg>
+          <span></span>
+        </div>
+
+        <section
+          class="proof-card destination-card"
+          aria-labelledby="destination-title"
+        >
+          <div class="card-heading">
+            <div>
+              <p class="overline">Independent inspector</p>
+              <h2 id="destination-title">Cleaned destination</h2>
+            </div>
+            <span class="step-number" aria-hidden="true">02</span>
+          </div>
+
+          <div
+            class="fixture-text destination-text"
+            contenteditable="true"
+            data-destination-text
+            data-empty="true"
+            role="textbox"
+            aria-label="Paste cleaned text"
+            spellcheck="false"
+            tabindex="0"
+          >
+            Paste the rewritten clipboard here to verify the result.
+          </div>
+
+          <div class="inspection-stack">
+            <div class="inspection-result waiting" data-destination-count>
+              Waiting for cleaned text
+            </div>
+            <div class="visible-result" data-visible-result>
+              Visible-text comparison pending
+            </div>
+          </div>
+
+          <div class="card-action">
+            <button class="secondary-button" type="button" data-paste-button>
+              <span class="button-icon" aria-hidden="true">↙</span>
+              Paste cleaned text
+            </button>
+            <p class="action-status" aria-live="polite" data-paste-status>
+              Ready to inspect cleaned text
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <span>Generic Unicode-property inspection</span>
+        <span class="footer-divider" aria-hidden="true"></span>
+        <span>No network · no saved text</span>
+      </footer>
+    </main>
+  </body>
+</html>

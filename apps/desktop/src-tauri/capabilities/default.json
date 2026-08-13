@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Minimal capabilities for DryMark's local windows.",
+  "windows": ["tray", "settings", "toast"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-hide"
+  ]
+}

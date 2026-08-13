@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A real DryMark clipboard cleanup demonstrated on macOS."
+    />
+    <meta name="color-scheme" content="dark" />
+    <title>DryMark · Clipboard cleanup demo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: #eff8ff;
+        background: #081017;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(56, 189, 248, 0.14), transparent 34rem),
+          radial-gradient(circle at 88% 88%, rgba(52, 211, 153, 0.1), transparent 32rem),
+          #081017;
+      }
+
+      main {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: clamp(42px, 7vw, 84px) 0 56px;
+      }
+
+      header {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+
+      .mark {
+        display: grid;
+        width: 52px;
+        height: 52px;
+        flex: 0 0 52px;
+        padding: 12px;
+        border: 1px solid rgba(125, 211, 252, 0.32);
+        border-radius: 16px;
+        background: linear-gradient(145deg, rgba(14, 165, 233, 0.24), rgba(13, 148, 136, 0.14));
+        gap: 4px;
+      }
+
+      .mark span {
+        display: block;
+        border-radius: 999px;
+        background: #a5e7ff;
+      }
+
+      .mark span:nth-child(2) {
+        width: 72%;
+      }
+
+      .mark span:nth-child(3) {
+        width: 44%;
+      }
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-bottom: 5px;
+        font-size: clamp(1.65rem, 3vw, 2.35rem);
+        letter-spacing: -0.035em;
+        word-spacing: 0.08em;
+      }
+
+      p {
+        color: #a9bac8;
+        line-height: 1.55;
+      }
+
+      .player {
+        overflow: hidden;
+        border: 1px solid rgba(125, 211, 252, 0.2);
+        border-radius: 22px;
+        background: #050a0f;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        background: #050a0f;
+      }
+
+      .caption {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        justify-content: space-between;
+        padding: 18px 2px 0;
+        font-size: 0.92rem;
+      }
+
+      a {
+        color: #7dd3fc;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div>
+          <h1>DryMark in 10 seconds</h1>
+          <p>Copy marked text, press the shortcut, and paste fresh plain text.</p>
+        </div>
+      </header>
+
+      <div class="player">
+        <video
+          autoplay
+          controls
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster="../media/drymark-demo-poster.png"
+        >
+          <source src="../media/drymark-demo.mp4" type="video/mp4" />
+          <a href="../media/drymark-demo.mp4">Download the silent MP4 demo.</a>
+        </video>
+      </div>
+
+      <div class="caption">
+        <p>Real packaged macOS app · real system clipboard · synthetic text</p>
+        <a href="https://github.com/gabrimatic/drymark">View the source on GitHub</a>
+      </div>
+    </main>
+  </body>
+</html>

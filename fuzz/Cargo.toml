@@ -1,0 +1,29 @@
+[package]
+name = "drymark-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+drymark-core = { path = "../crates/drymark-core" }
+drymark-transaction = { path = "../crates/drymark-transaction" }
+
+[[bin]]
+name = "sanitize"
+path = "fuzz_targets/sanitize.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "transaction"
+path = "fuzz_targets/transaction.rs"
+test = false
+doc = false
+bench = false
+
+[workspace]
